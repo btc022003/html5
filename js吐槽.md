@@ -1,5 +1,9 @@
 下面这段代码，看着心累啊......,能不这么多套路吗
 
+ > 假如你想帮他尽快找个活儿， 赚到钱， 推荐PHP。  
+假如你想让他成为一个高效工程师， 推荐 Python。   
+假如你想让他爱上他的工作， 推荐 Ruby。
+
 ```javascript
 var fs = require("fs");
 var buf = new Buffer(1024);
