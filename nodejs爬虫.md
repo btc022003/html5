@@ -1,0 +1,31 @@
+通过nodejs实现爬虫功能
+
+> 发现没中语言我都会倾向于这些爬虫类的实现
+
+```javascript
+// 安装模块 https://github.com/sylvinus/node-crawler
+// npm install crawler
+
+//主要代码如下
+var Crawler = require("crawler");
+var url = require('url');
+
+var c = new Crawler({
+    maxConnections : 10,
+    // This will be called for each crawled page
+    callback : function (error, result, $) {
+        // $ is Cheerio by default
+        //a lean implementation of core jQuery designed specifically for the server
+        $('.table a[target="_blank"]').each(function(index, a) {
+            var toQueueUrl = $(a).attr('href');
+            var txt = $(a).text();
+            // c.queue(toQueueUrl);
+            console.log(txt+"["+toQueueUrl+"]");
+        });
+    }
+});
+
+// Queue just one URL, with default callback
+c.queue('http://kankindle.com/');
+
+```
