@@ -29,3 +29,19 @@ var c = new Crawler({
 c.queue('http://kankindle.com/');
 
 ```
+
+如果爬取的内容需要下载，就要调用下载模块
+
+```javascript
+// 安装模块 https://github.com/leeroybrun/node-mt-files-downloader
+// npm install mt-files-downloader
+var Downloader = require('mt-files-downloader');
+var downloader = new Downloader();
+////配置下载参数
+/****
+*FILE_URL 远程文件路径
+*FILE_SAVE_PATH 文件保存的本地目录
+****/
+var dl = downloader.download('FILE_URL', 'FILE_SAVE_PATH');
+dl.start();
+```
