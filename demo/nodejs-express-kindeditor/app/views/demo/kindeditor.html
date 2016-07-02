@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <form action="/demo/kindeditor" method="post">
+        <textarea id="editor" name="content" style="width:700px;height:300px;"></textarea>
+        <script charset="utf-8" src="/lib/kindeditor/kindeditor.min.js"></script>
+        <script charset="utf-8" src="/lib/kindeditor/lang/zh-CN.js"></script>
+        <script>
+            var options = {
+                uploadJson: '/common/kindeditor/uploadImg'
+            };
+
+            KindEditor.ready(function(K) {
+                window.editor = K.create('#editor', options);
+            });
+        </script>
+        <input type="submit" value="提交"/>
+    </form>
+
+</body>
+</html>
