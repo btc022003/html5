@@ -17,11 +17,11 @@
         <div class="list" >
             <!--此处把nodejs中读取的questions数据显示出来-->
             <a class="item item-avatar" href="#" v-for="q in questions">
-                <img src="http://localhost:3000/{{q.avatar}}">
+                <img v-bind:src="'http://localhost:3000/'+q.avatar">
                 <h2>{{q.userName}}</h2>
                 <p>{{q.content}}</p>
                 <div class="list" v-for="a in q.answers">
-                    <img style="width:30px;" src="http://localhost:3000/{{a.avatar}}">
+                    <img style="width:30px;" v-bind:src="'http://localhost:3000/'+a.avatar">
                     <h5>{{a.userName}}</h5>
                     <p>{{a.content}}</p>
                 </div>
