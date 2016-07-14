@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <title>vue-demo</title>
+</head>
+
+<body>
+
+    <div class="main scroll-content" style="overflow: scroll;"  id="app">
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">姓名</span>
+                <input type="text" v-model="name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">年龄</span>
+                <input type="text" v-model="age">
+            </label>
+            <button class="button button-full button-positive" v-on:click="addFun">
+                添加
+            </button>
+        </div>
+
+        <div class="list">
+            <a class="item" v-for="student in students">
+                {{student.name}}(今年{{student.age}}岁)
+            </a>
+        </div>
+    </div>
+
+    <!--<ul class="list">
+        <li class="item item-toggle">
+            HTML5
+            <label class="toggle toggle-royal">
+            <input type="checkbox">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+            </label>
+        </li>
+    </ul>-->
+
+    <div class="tabs tabs-icon-top tabs-striped">
+        <a class="tab-item active" href="index.html">
+            <i class="icon ion-home"></i> Home
+        </a>
+        <a class="tab-item" href="questions.html">
+            <i class="icon ion-star"></i> 问答
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i> Settings
+        </a>
+    </div>
+
+    <!--<div class="main" id="app">
+        <p>{{message}}</p>
+        <textarea  v-model="message" id="" cols="10" rows="3"></textarea>
+
+        <p>
+            <label>姓名</label>
+            <input type="text" v-model="name">
+        </p>
+        <p>
+            <label>年龄</label>
+            <input type="text" v-model="age">
+        </p>
+        <p>
+            <button v-on:click="addFun">添加</button>
+        </p>
+
+        <ul>
+            <li  v-for="student in students">
+                {{student.name}}(今年{{student.age}}岁)
+                <button v-on:click="removeStudent($index)">X</button>
+            </li>
+        </ul>
+    </div>-->
+
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/ionic/js/ionic.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

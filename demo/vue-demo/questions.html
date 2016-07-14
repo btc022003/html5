@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <title>问答系统</title>
+</head>
+
+<body>
+    <div class="bar bar-header bar-royal">
+        <h1 class="title">问答系统</h1>
+    </div>
+    <div class="scroll-content has-header has-footer" style="overflow: scroll;" id="app">
+
+        <div class="list" >
+            <!--此处把nodejs中读取的questions数据显示出来-->
+            <a class="item item-avatar" href="#" v-for="q in questions">
+                <img src="http://localhost:3000/{{q.avatar}}">
+                <h2>{{q.userName}}</h2>
+                <p>{{q.content}}</p>
+                <div class="list" v-for="a in q.answers">
+                    <img style="width:30px;" src="http://localhost:3000/{{a.avatar}}">
+                    <h5>{{a.userName}}</h5>
+                    <p>{{a.content}}</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div class="tabs tabs-icon-top tabs-striped">
+        <a class="tab-item" href="index.html">
+            <i class="icon ion-home"></i> Home
+        </a>
+        <a class="tab-item active" href="questions.html">
+            <i class="icon ion-star"></i> 问答
+        </a>
+        <a class="tab-item">
+            <i class="icon ion-gear-a"></i> Settings
+        </a>
+    </div>
+
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/ionic/js/ionic.min.js"></script>
+    <script src="js/questions.js"></script>
+</body>
+
+</html>
