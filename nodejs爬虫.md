@@ -1,6 +1,6 @@
 通过nodejs实现爬虫功能
 
-> 发现没中语言我都会倾向于这些爬虫类的实现
+> 发现每种语言我都会倾向于这些爬虫类的实现
 
 ```javascript
 // 安装模块 https://github.com/sylvinus/node-crawler
