@@ -44,3 +44,10 @@ gulp.task('default',['firsttask','elseTask']);
 ```
 
 demo在demo目录中的grunt-demo中
+
+```
+运行方式
+gulp firsttask ////运行
+gulp jsmin     /////
+gulp watchless  ////
+```
