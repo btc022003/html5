@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自动完成</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 300px;
+            margin: 80px auto;
+        }
+
+        .auto-complete {
+            position: relative;
+        }
+        .auto-complete ul{
+          padding: 0;
+          margin: 0;
+        }
+
+        .auto-complete input {
+            width: 200px;
+        }
+
+        .auto-complete li {
+            list-style: none;
+        }
+        .filter-container{
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #666666;
+        }
+        .filter-container img{
+          margin: 5px;
+          width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="auto-complete">
+            <input type="text" id="txtData" placeholder="请输入关键字">
+            <ul id="filterList">
+            </ul>
+        </div>
+    </div>
+    <script>
+        ////// 输入框
+        var txtInput = document.querySelector('#txtData')
+
+        // 列表
+        var filterList = document.querySelector('#filterList')
+
+        /////数据源
+        var data = [{
+            name: '小明',
+            id: 1,
+            pinyin: "xiaoming"
+        }, {
+            name: '小红',
+            id: 2,
+            pinyin: "xiaohong"
+        }, {
+            name: 'Tom',
+            id: 3,
+            pinyin: "tom"
+        }, {
+            name: 'Jerry',
+            id: 4,
+            pinyin: "jerry"
+        }]
+
+        /**
+         *
+         * 根据关键字筛选数据
+         * @param  {[type]} key [筛选数据使用的关键字]
+         * @return {[type]}     [返回筛选后的结果]
+         */
+        function doFilter(key) {
+            key = key.toLowerCase()
+            return data.filter(function(item) {
+                // 筛选数据源中的数据项 此为查找内容
+                if (item.name.indexOf(key) > -1 || item.id.toString().indexOf(key) > -1 || item.pinyin.indexOf(key) > -1) {
+                    return item
+                }
+            })
+        }
+
+        /**
+         *
+         * 绑定html节点内容
+         * @param  {[type]} key [description]
+         * @return {[type]}     [description]
+         */
+        function bindHtml(key) {
+            var arr = doFilter(key);
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                // str += '<li>' + arr[i].name + '</li>'
+
+                str += '<li>'
+                str += '<div class="filter-container"><span>'+arr[i].name+'</span><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1093821273,593170542&fm=21&gp=0.jpg" alt="" /></div>'
+                str += '</li>'
+            }
+            filterList.innerHTML = str;
+        }
+
+        // 文本框的键盘事件
+        txtInput.onkeyup = function() {
+            var key = txtInput.value;
+            bindHtml(key)
+        }
+    </script>
+</body>
+
+</html>
