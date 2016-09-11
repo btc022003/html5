@@ -3,3 +3,12 @@
 ### vue项目方式开发
 
 > 使用第三方工具vue-cli快速搭建vue项目,使用webpack方式实现代码的模块化
+
+```bash
+# https://github.com/vuejs/vue-cli
+npm install -g vue-cli
+vue init <template-name> <project-name>
+# example
+# vue init webpack my-app
+# 以webpack的方式创建一个应用,包含了所有的使用到的插件
+```
