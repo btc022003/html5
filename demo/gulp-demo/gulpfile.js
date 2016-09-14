@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 /////创建一个编译压缩less的命令
 gulp.task('firsttask',function(){
-  gulp.src('./src/less/index.less')
+  gulp.src('./src/less/*.less')
       .pipe(less())
       .pipe(minifycss())
       .pipe(gulp.dest('./dist/css'));
