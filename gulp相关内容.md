@@ -4,6 +4,13 @@ gulp安装使用nodejs进行安装,安装为全局变量
 npm install gulp -g  
 ```
 
+常用的gulp插件  
+```
+gulp-imagemin //压缩图片
+gulp-file-include //实现客户端html代码的局部独立化
+gulp-nodemon //监控nodejs项目代码的改动 重启程序
+```
+
 gulp使用的配置文件为 gulpfile.js,配置文件的写法非常看起来很容易理解,符合程序代码的写法,😒比grunt 让人很是不爽的配置文件强多了
 
 ```javascript
