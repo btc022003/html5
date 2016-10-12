@@ -45,3 +45,13 @@ var downloader = new Downloader();
 var dl = downloader.download('FILE_URL', 'FILE_SAVE_PATH');
 dl.start();
 ```
+
+使用此模块开发爬虫的时候遇到编码问题时的处理方式  
+```javascript
+// 通过设置forceUTF8和incomingEncoding处理中文编码页面的问题
+var c = new Crawler({
+    maxConnections: 10,
+    forceUTF8: true,
+    incomingEncoding: 'gb2312'
+})
+```
