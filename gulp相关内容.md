@@ -58,3 +58,5 @@ gulp firsttask ////运行
 gulp jsmin     /////
 gulp watchless  ////
 ```
+
+> 用多了之后发现平时离不开这个了...
