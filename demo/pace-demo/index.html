@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,miximum-scale=1.0, user-scalable=0">
+        <title>pace-demo</title>
+        <link rel="stylesheet" href="./bower_components/PACE/themes/blue/pace-theme-center-atom.css">
+    </head>
+    <body>
+        <ul id="list"></ul>
+        <script src="./bower_components/PACE/pace.min.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script>
+        //获取服务器端数据
+        $.getJSON('http://lixuanqi.com/api/v1/address/get_data.json',res=>{
+            console.dir(res.data)
+            var strHtml = ''
+            //遍历数据 拼接字符串结果
+            res.data.forEach(item=>{
+                strHtml+=`<li>${item.name}</li>`
+            })
+            $('#list').html(strHtml)
+        })
+        </script>
+    </body>
+</html>
