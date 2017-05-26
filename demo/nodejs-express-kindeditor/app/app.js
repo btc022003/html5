@@ -6,7 +6,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-//上传目录
+
+//配置全局kindeditor上传目录
 global.uploadDir = __dirname+'/public/upload'
 
 ///引入art-template模板引擎
