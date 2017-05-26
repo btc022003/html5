@@ -55,18 +55,18 @@ function isPhoto(filetype) {
  * 获取服务器端文件列表,需要继续完善
  */
 router.get('/fileList', function (req, res) {
-    console.log(req.query)
+    // console.log(req.query)
     var temPath = '/' //文件管理时获取的目录路径
     if (req.query.path) {
         temPath = req.query.path
         var fi = temPath.split('/').findIndex(f=>{
             return f == 'upload'
         })
-        console.log(fi)
+        // console.log(fi)
         if(fi>-1){
             temPath = temPath.split('/').slice(fi).join('/')
-            console.log('....')
-            console.log(temPath)
+            // console.log('....')
+            // console.log(temPath)
         }
         temPath = temPath.replace('upload', '')
     }
