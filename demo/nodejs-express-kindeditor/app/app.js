@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+//上传目录
+global.uploadDir = __dirname+'/public/upload'
+
 ///引入art-template模板引擎
 var template = require('art-template');
 /////art-template配置 标准格式 照抄即可

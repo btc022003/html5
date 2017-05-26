@@ -12,7 +12,9 @@
         <script charset="utf-8" src="/lib/kindeditor/lang/zh-CN.js"></script>
         <script>
             var options = {
-                uploadJson: '/common/kindeditor/uploadImg'
+                allowFileManager:true,
+                uploadJson: '/common/kindeditor/uploadImg',
+                fileManagerJson:'/common/kindeditor/fileList'
             };
 
             KindEditor.ready(function(K) {
