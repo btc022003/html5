@@ -16,7 +16,7 @@ router.post('/uploadImg', function (req, res, next) {
     var dateDir = dateFormat(Date.now(), 'yyyymmdd') //为每一天上传的图片设置文件夹进行存储
 
     //注意此处上传目录的路径
-    form.uploadDir = global.uploadDir + '/' + dateDir//__dirname+'/../../../public/upload';
+    form.uploadDir = global.uploadDir + '/' + dateDir //__dirname+'/../../../public/upload';
 
     //判断文件夹是否存在,如果不存在就创建
     if (!fs.existsSync(form.uploadDir)) {

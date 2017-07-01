@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form id="formImg">
+        <input type="file" name="file">
+    </form>
+    <button onclick="uploadFile()">上传</button>
+    <script>
+        function uploadFile(){
+            var xhr = new XMLHttpRequest()
+            var formData = new FormData(document.getElementById('formImg'))
+            formData.append('token','使用qn.js生成的上传token')
+            xhr.open('post','http://upload.qiniu.com/')
+            xhr.send(formData)
+            xhr.onreadystatechange = function(e){
+                if(xhr.readyState == 4){
+                    console.log(xhr)
+                    var res = JSON.parse(xhr.response)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
