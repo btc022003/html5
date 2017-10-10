@@ -12,3 +12,7 @@ vue init <template-name> <project-name>
 # vue init webpack my-app
 # 以webpack的方式创建一个应用,包含了所有的使用到的插件
 ```
+
+### vue中表格单元格合并
+
+> 在demo中新增一个vue中表格合并的demo, ./demo/vue-表格合并.html

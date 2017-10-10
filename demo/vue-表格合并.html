@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+        .table tbody tr td{
+            text-align:center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table class="table table-bordered">
+            <tr>
+                <td>序号</td>
+                <td>省</td>
+                <td>市</td>
+            </tr>
+            <template v-for="(item,index) in citys">
+                <tr>
+                    <td :rowspan="item.children.length+1">{{index+1}}</td>
+                    <td :rowspan="item.children.length+1">{{item.name}}</td>
+                </tr>
+                <tr v-for="c in item.children">
+                    <td>{{c.name}}</td>
+                </tr>
+            </template>
+        </table>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                citys: [{
+                    name: '上海',
+                    children: [{
+                        name: '黄浦区',
+                    },{
+                        name: '杨浦区',
+                    },{
+                        name: '普陀区',
+                    },{
+                        name: '徐汇区',
+                    },{
+                        name: '卢湾区',
+                    },{
+                        name: '宝山区',
+                    },{
+                        name: '张江区',
+                    }]
+                },{
+                    name: '河南',
+                    children: [{
+                        name: '郑州市',
+                    },{
+                        name: '开封市',
+                    }]
+                },{
+                    name: '福建',
+                    children: [{
+                        name: '福州市',
+                    },{
+                        name: '厦门市',
+                    },{
+                        name: '漳州市',
+                    }]
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
